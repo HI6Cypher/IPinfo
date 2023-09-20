@@ -29,7 +29,7 @@ class IP :
                     self.pass_ip.remove(IP)
                     self.save()
                 elif q[0]["status"] == "fail" :
-                    print(f"[*] check ip {IP}  fail")
+                    print(f"[*] check ip {IP}  failure")
                     self.pass_ip.remove(IP)
             except KeyboardInterrupt :
                 sys.exit()

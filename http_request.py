@@ -19,7 +19,7 @@ class HTTP_request :
                     data = flood.recv(4096)
                     if not data :
                         status = response.decode().split(" ")[1] if isinstance(response, bytes) else response.split(" ")[1]
-                        response = response.decode().split("\r\n")[-1] if isinstance(response, bytes) else response.split("\r\n")[-1]
+                        response = response.decode().split("\r\n\r\n", 1)[-1] if isinstance(response, bytes) else response.split("\r\n\r\n", 1)[-1]
                         try :
                             data = json.loads(response)
                         except Exception:
